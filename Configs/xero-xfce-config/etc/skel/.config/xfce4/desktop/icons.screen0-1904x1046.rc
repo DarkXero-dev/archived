@@ -1,0 +1,11 @@
+[xfdesktop-version-4.10.3+-rcfile_format]
+4.10.3+=true
+
+[Trash]
+row=8
+col=17
+
+[/home/kudu]
+row=1
+col=0
+

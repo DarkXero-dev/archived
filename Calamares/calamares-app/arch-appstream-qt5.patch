@@ -1,0 +1,85 @@
+diff --git a/src/modules/packagechooser/CMakeLists.txt b/src/modules/packagechooser/CMakeLists.txt
+index 1f517fd33..024f99d7d 100644
+--- a/src/modules/packagechooser/CMakeLists.txt
++++ b/src/modules/packagechooser/CMakeLists.txt
+@@ -25,18 +25,18 @@ endif()
+ #
+ option(BUILD_APPSTREAM "Support appstream: items in PackageChooser (requires libappstream-qt)" ON)
+ if(BUILD_APPSTREAM)
+-    find_package(AppStreamQt)
++    find_package(AppStreamQt5)
+     set_package_properties(
+-        AppStreamQt
++        AppStreamQt5
+         PROPERTIES
+         DESCRIPTION "Support for AppStream (cache) data"
+         URL "https://github.com/ximion/appstream"
+         PURPOSE "AppStream provides package data"
+         TYPE OPTIONAL
+     )
+-    if(AppStreamQt_FOUND)
+-        add_definitions(-DHAVE_APPSTREAM_VERSION=${AppStreamQt_VERSION_MAJOR})
+-        list(APPEND _extra_libraries AppStreamQt)
++    if(AppStreamQt5_FOUND)
++        add_definitions(-DHAVE_APPSTREAM_VERSION=${AppStreamQt5_VERSION_MAJOR})
++        list(APPEND _extra_libraries AppStreamQt5)
+         list(APPEND _extra_src ItemAppStream.cpp)
+     endif()
+ endif()
+diff --git a/src/modules/packagechooser/Config.cpp b/src/modules/packagechooser/Config.cpp
+index 931071a4e..464c716b3 100644
+--- a/src/modules/packagechooser/Config.cpp
++++ b/src/modules/packagechooser/Config.cpp
+@@ -16,7 +16,7 @@
+
+ #ifdef HAVE_APPSTREAM_VERSION
+ #include "ItemAppStream.h"
+-#include <AppStreamQt/pool.h>
++#include <AppStreamQt5/pool.h>
+ #include <memory>
+ #endif
+
+diff --git a/src/modules/packagechooser/ItemAppStream.cpp b/src/modules/packagechooser/ItemAppStream.cpp
+index 7592c8308..2fac044a1 100644
+--- a/src/modules/packagechooser/ItemAppStream.cpp
++++ b/src/modules/packagechooser/ItemAppStream.cpp
+@@ -17,9 +17,9 @@
+ #include "utils/Logger.h"
+ #include "utils/Variant.h"
+
+-#include <AppStreamQt/image.h>
+-#include <AppStreamQt/pool.h>
+-#include <AppStreamQt/screenshot.h>
++#include <AppStreamQt5/image.h>
++#include <AppStreamQt5/pool.h>
++#include <AppStreamQt5/screenshot.h>
+
+ /// @brief Return number of pixels in a size, for < ordering purposes
+ static inline quint64
+diff --git a/src/modules/packagechooserq/CMakeLists.txt b/src/modules/packagechooserq/CMakeLists.txt
+index b0b1f738d..133252ec5 100644
+--- a/src/modules/packagechooserq/CMakeLists.txt
++++ b/src/modules/packagechooserq/CMakeLists.txt
+@@ -36,9 +36,9 @@ endif()
+ #
+ option(BUILD_APPSTREAM "Support appstream: items in PackageChooser (requires libappstream-qt)" ON)
+ if(BUILD_APPSTREAM)
+-    find_package(AppStreamQt)
++    find_package(AppStreamQt5)
+     set_package_properties(
+-        AppStreamQt
++        AppStreamQt5
+         PROPERTIES
+         DESCRIPTION "Support for AppStream (cache) data"
+         URL "https://github.com/ximion/appstream"
+@@ -46,8 +46,8 @@ if(BUILD_APPSTREAM)
+         TYPE OPTIONAL
+     )
+     if(AppStreamQt_FOUND)
+-        add_definitions(-DHAVE_APPSTREAM_VERSION=${AppStreamQt_VERSION_MAJOR})
+-        list(APPEND _extra_libraries AppStreamQt)
++        add_definitions(-DHAVE_APPSTREAM_VERSION=${AppStreamQt5_VERSION_MAJOR})
++        list(APPEND _extra_libraries AppStreamQt5)
+         list(APPEND _extra_src ${_packagechooser}/ItemAppStream.cpp)
+     endif()
+ endif()

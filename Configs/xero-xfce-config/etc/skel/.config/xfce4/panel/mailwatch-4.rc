@@ -1,0 +1,13 @@
+[mailwatch-plugin]
+click_command=thunderbird
+new_messages_command=notify-send "New mail" "You have new messages in your inbox" -i xfce-newmail
+count_changed_command=
+normal_icon=xfce-nomail
+new_mail_icon=xfce-newmail
+log_lines=200
+show_log_status=true
+auto_open_online_doc=false
+
+[mailwatch]
+nmailboxes=0
+

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.40.0 
+
+Copyright (C) 2021-2023 CachyOS team
+
+This file is part of cachyos-welcome.
+
+cachyos-welcome is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+cachyos-welcome is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with cachyos-welcome.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<interface domain="xerowelcome">
+  <requires lib="gtk+" version="3.24"/>
+  <!-- interface-css-provider-path style.css -->
+  <!-- interface-license-type gplv3 -->
+  <!-- interface-name cachyos-welcome -->
+  <!-- interface-copyright 2021-2023 CachyOS team -->
+  <object class="GtkBox" id="pagebox">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkButton" id="backbutton">
+        <property name="label">gtk-go-back</property>
+        <property name="name">faqBrowser</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="receives-default">True</property>
+        <property name="use-stock">True</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <!-- n-columns=3 n-rows=9 -->
+      <object class="GtkGrid" id="pagebody">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-left">10</property>
+        <property name="margin-right">10</property>
+        <property name="margin-top">10</property>
+        <property name="margin-bottom">10</property>
+        <property name="row-spacing">20</property>
+        <property name="column-spacing">10</property>
+        <property name="column-homogeneous">True</property>
+        <child>
+          <object class="GtkImage" id="pageimage">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">1</property>
+            <property name="width">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="mainlabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">This is where you configure your system using variety of our scripts. We will do our best to help you tweak your system for a good balance between best performance &amp; stability. For troubleshooting, please use the "Troubleshooting" button (D'uh).
+
+You can also build any of our 3 ISOs using this tool, just click on the "Xero ISO Builder" button, select which one you want to build and watch it do its magic, it might take some time depends on your hardware config. Also keep a close eye on it as you will prompted to enter root password near the end.
+
+Not everything on here is meant to be used, also don't ask if it's possible to use this tool on other Arch-Based Distros, it was intended for XeroLinux wether it works or not is not up to us. We concentrate on XeroLinux nothing else.</property>
+            <property name="wrap">True</property>
+            <property name="width-chars">1</property>
+            <property name="max-width-chars">1</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">3</property>
+            <property name="width">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="apply-defaults">
+            <property name="label" translatable="yes">Restore Default Desktop Settings</property>
+            <property name="name">apply-defaults</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">Restores OOB Settings</property>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="switch-to-zsh">
+            <property name="label" translatable="yes">Switch to ZSH with OMZ/P10K</property>
+            <property name="name">switch-to-zsh</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">Switches from Bash to ZSH</property>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="init-snapper">
+            <property name="label" translatable="yes">Initialize Snapper (BTRFS)</property>
+            <property name="name">init-snapper</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">Snapper For BTRFS users</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="iso-builder">
+            <property name="label" translatable="yes">Xero ISO Builder</property>
+            <property name="name">iso-builder</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">Allows you to build our ISOs</property>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="xero-rices">
+            <property name="label" translatable="yes">XeroLinux KDE Rices</property>
+            <property name="name">xero-rices</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">Apply our KDE Rices</property>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="pacseek">
+            <property name="label" translatable="yes">Pacseek TUI Package Manager</property>
+            <property name="name">pacseek</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">A TUI Package Manager with AUR Support</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="plasma-firewall">
+            <property name="label" translatable="yes">Install/Enable Firewall</property>
+            <property name="name">plasma-firewall</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">Firewall Installer</property>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="dbox">
+            <property name="label" translatable="yes">Distrobox Tool</property>
+            <property name="name">dbox</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">Set Up Distrobox with Docker</property>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="xerofix">
+            <property name="label" translatable="yes">Troubleshooting / Tweaking</property>
+            <property name="name">xerofix</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text">Troubleshoot and Tweak</property>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">7</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <style>
+          <class name="homepage"/>
+        </style>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+</interface>

@@ -1,0 +1,4 @@
+#!/bin/sh
+dconf load / < /etc/skel/.config/xero-dconf.conf
+sleep 1.5
+notify-send "Xero-XFCE settings Applied/Restored! 🔥"
